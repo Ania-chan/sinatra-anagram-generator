@@ -15,3 +15,5 @@ gem 'rspec'
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'puma'
+
+gem 'irb', require: false
