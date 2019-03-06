@@ -1,6 +1,19 @@
-<h1>Anagrams for <%= "#{@word}" %></h1>
-<ul>
-<% @anagrams.each do |anagram| %>
-    <% print %> <li><%= "#{anagram}" %></li>
-  <% end %>
-</ul>
+<div class="row d-flex justify-content-center align-items-center word-page">
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+        <h2>Anagrams For The Word</h2>
+        <h3><%= "#{@word}" %></h3>
+        <img src="/images/arrow.png"/>
+        <ul>
+        <% @anagrams.each do |anagram| %>
+            <% print %> <li><%= "#{anagram}" %></li>
+          <% end %>
+        </ul>    
+            <div>
+                <h4>Do you think there should be more anagrams here?</h4>
+                <div class="d-flex justify-content-between">
+                    <a href="#">Add the here</a>
+                    <a href="#">View more words</a>
+                </div>
+            </div>
+    </div>
+</div>
