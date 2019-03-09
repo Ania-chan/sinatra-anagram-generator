@@ -1,12 +1,15 @@
 <div class="row d-flex justify-content-center align-items-center form-page">
     <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+    <% if @error.present? %>
+    <p class="text-danger well"><i class="fas fa-exclamation-triangle"></i><%= @error %></p>
+    <% end %>
         <h2>Welcome To Our</h2>
         <h1>Anagram Generator</h1>
         
-        <form action="/" method="post" class="form">
-            <div class="form-group">
+        <form action="/" method="post" class="form col-sm-12">
+            <div class="form-group ">
               <label for="word" class="label">3 Letter Words ONLY Please!</label>
-              <input type="text" name="word" class="form-control">
+              <input type="text" name="word" class="form-control col-sm-12 ">
             <div>
             <input type="submit" class="justify-content-center text-align-center btn pink-button" value="Show Me  My Anagrams!">
         </form>
