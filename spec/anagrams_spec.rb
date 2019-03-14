@@ -37,7 +37,7 @@ describe 'Our Anagrams App' do
   end 
     
   it 'has letters of a word in alphabetical order' do
-    word = Word.find_by_text("cat")
+    word = Word.find_or_create_by(text: "cat")
     expect(word.letters == "act").to be(true)
   end  
 end
