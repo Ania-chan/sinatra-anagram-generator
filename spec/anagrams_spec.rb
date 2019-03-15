@@ -37,7 +37,12 @@ describe 'Our Anagrams App' do
   end 
     
   it 'has letters of a word in alphabetical order' do
-    word = Word.find_or_create_by(text: "cat")
+    word = Word.find_by_text("cat")
     expect(word.letters == "act").to be(true)
+  end  
+  
+  it 'adds letters before a new word is created' do
+    word = Word.create(text: "heroku")
+    expect(word.reload.letters == "ehkoru").to be(true)
   end  
 end
