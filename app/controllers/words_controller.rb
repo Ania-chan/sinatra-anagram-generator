@@ -14,6 +14,6 @@ post '/words' do
 end
 
 get '/words/:id' do
-    @word = Word.find_by_text(params[:id])
+    @word = Word.find_by_id(params[:id])
     erb :"/words/show"
 end
