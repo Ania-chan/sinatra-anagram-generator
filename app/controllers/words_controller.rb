@@ -16,14 +16,20 @@ end
 get '/words/:id/edit' do
     @word = Word.find_by_id(params[:id])
     erb :"/words/edit"
-  end
+end
  
-  put '/words/:id' do
+put '/words/:id' do
     @word = Word.find_by_id(params[:id])
     @word.text = params[:text]
     @word.save
     erb :"/words/show"
-  end
+end
+
+delete '/words/:id' do
+    @word = Word.find_by_id(params[:id])
+    @word.delete
+    redirect "/words"
+end
 
 get '/words/:id' do
     @word = Word.find_by_id(params[:id])
