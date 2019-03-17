@@ -2,7 +2,8 @@
   <table class="table table-striped">
     <thead>
       <th>Text</th>
-      <th>Letters</th>    
+      <th>Letters</th>  
+      <th>Edit</th>    
     </thead>
     <tbody>
       <% @words.each do |word| %>
@@ -12,7 +13,10 @@
                 <%= "#{word.text}" %>
             </a>
           </td>
-          <td><%= "#{word.letters}" %></td>        
+          <td><%= "#{word.letters}" %></td>   
+          <td>
+          <a href="<%= "/words/#{word.id}/edit" %>">Edit</a>
+          </td>     
         </tr>
       <% end %>
     </tbody>

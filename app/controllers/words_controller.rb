@@ -13,6 +13,18 @@ post '/words' do
     redirect "/words/#{word.id}"
 end
 
+get '/words/:id/edit' do
+    @word = Word.find_by_id(params[:id])
+    erb :"/words/edit"
+  end
+ 
+  put '/words/:id' do
+    @word = Word.find_by_id(params[:id])
+    @word.text = params[:text]
+    @word.save
+    erb :"/words/show"
+  end
+
 get '/words/:id' do
     @word = Word.find_by_id(params[:id])
     erb :"/words/show"
