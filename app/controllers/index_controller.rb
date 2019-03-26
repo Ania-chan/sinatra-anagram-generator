@@ -39,7 +39,7 @@ def distinct_letters?(input)
 end
 
 def valid_input?(input)
-    if three_letters?(input) && distinct_letters?(input)
+    if distinct_letters?(input)
         true
     else
         raise Exception.new("Word must be less than or equal to 3 characters.")
